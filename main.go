@@ -33,7 +33,7 @@ func main() {
 	router.HandleFunc("/orders/{id}", auth.JWTAuth(order.DeleteOrder)).Methods("DELETE")
 
 	c := cors.New(cors.Options{
-		AllowedOrigins: []string{"http://127.0.0.1:5500"},
+		AllowedOrigins: []string{"*"},
 		AllowedMethods: []string{"GET", "POST", "PUT", "DELETE"},
 		AllowedHeaders: []string{"Content-Type", "Authorization"},
 		Debug:          true,
